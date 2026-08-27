@@ -29,7 +29,7 @@ Map.addLayer(composite, visParamsFC, 'False Color (8-4-3)');
 Map.addLayer(composite, visParamsTCC, 'True Color (4-3-2)');
 
 // ==========================================
-// EXPORT INDIVIDUAL BANDS (B8, B4, B3, B2)
+// EXPORT INDIVIDUAL BANDS (B8, B4, B3, B11)
 // ==========================================
 
 // 1. Export Band 8 (NIR)
@@ -62,7 +62,7 @@ Export.image.toDrive({
   maxPixels: 1e13
 });
 
-// 4. Export Band 2 (SWIR) - For TCC
+// 4. Export Band 2 (SWIR)
 Export.image.toDrive({
   image: composite.select('B11'),
   description: 'S2_Band2_SWIR_2023',
